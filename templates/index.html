@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Scrapping Web</title>
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        button {
+            background-color: #cde213; /* Green */
+            border: none;
+            border-radius: 20px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button a {
+            color: black;
+            text-decoration: none;
+        }
+        .jumbotron {
+            background-color: #f8f9fa; /* Light background for the jumbotron */
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="jumbotron" style="color:black">
+    <span>
+    <h1 style="color:black">
+        Live News Web Application
+    </h1>
+
+    <h2>Today's Highlight:</h2>
+    </span>
+    <span>
+        <button><a href="index">US News</a></button>
+        <button><a href="bbc">BBC-News (world)</a></button>
+       </span>
+</div>
+ 
+ 
+<div class="container" style="justify-content: left;">
+ 
+    {% for new, des, i in context %}
+    <div>
+    <img src="{{i}}" alt="Image Not found" width="300" height="180"></div>
+    <h3 style="color:blue">News: </h3> {{new}}
+
+    <h4 style="color:rgb(255, 0, 0)">Description: </h4> {{des}}
+    <hr style="border: 1px solid black;">
+    {% endfor %}
+ 
+ 
+</div>
+ 
+ 
+</body>
+</html>
